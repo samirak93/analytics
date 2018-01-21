@@ -54,7 +54,7 @@ contact: >
 # Work Section
 
 projects:
-- {name: 'Where do teams cross?', folder: 'proj-1', file: 'projects/proj-1.html'}
+- {name: 'WHERE DO TEAMS CROSS?', folder: 'proj-1', file: 'projects/proj-1.html'}
 
 #-------------------------------
 # Contact Section
