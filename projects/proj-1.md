@@ -27,6 +27,10 @@ The input here is the cross start location X and Y coordinates. One of the param
 
 <b>"point_tree.query_ball_point"</b> is the function to find the cross_end X and Y coordinates. 
 
+![alt text](https://raw.githubusercontent.com/samirak93/analytics-blog/master/_posts/images/KDTree.gif)
+
+<i>Blue Circle is Click location and outer green circle is search radius limit(Credits: Samirak93)</i>
+
 
 The entire code is made available here: [GitHub](https://github.com/samirak93/Where-do-teams-cross-/blob/master/crosses_KD.py)
 
