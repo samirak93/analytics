@@ -28,7 +28,7 @@ The input here is the cross start location X and Y coordinates. One of the param
 <b>"point_tree.query_ball_point"</b> is the function to find the cross_end X and Y coordinates. 
 
 
-The entire code is made available here: https://github.com/samirak93/Where-do-teams-cross-/blob/master/crosses_KD.py
+The entire code is made available here: [GitHub](https://github.com/samirak93/Where-do-teams-cross-/blob/master/crosses_KD.py)
 
 I tried to build this as a working demo (using python and d3js) but couldn't come up with anything solid. If you can bring this as a demo online, I'd be delighted to get a look at it. 
 
