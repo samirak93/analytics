@@ -44,7 +44,7 @@ The entire code is made available here: [GitHub](https://github.com/samirak93/W
 
 I tried to build this as a working demo (using python and d3js) but couldn't come up with anything solid. If you can bring this as a demo online, I'd be delighted to get a look at it. 
 
-If you've any comments/issues on the post/code, please do let me know. I'm a beginner in python and please do expect any flaws in the code :)
+If you've any comments/issues on the post/code, please do let me know. I'm a beginner in python and please do expect potential flaws in the code :)
 
 <b>Note:</b>The data used here belongs to Opta and hence are not made available in the above code link.
 
