@@ -33,7 +33,7 @@ google-analytics-ua: 'UA-112742997-1'
 # Change to true for Disqus comments
 disqus:
   comments: true
-  disqus_shortname: 'Samirak93'
+  disqus_shortname: 'https-samirak93-github-io-analytics'
 
 #-------------------------------
 # About Section
