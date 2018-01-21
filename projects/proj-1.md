@@ -31,6 +31,7 @@ The input here is the cross start location X and Y coordinates. One of the param
 
 <i>Blue Circle is Click location and outer green circle is search radius limit(Credits: Samirak93)</i>
 
+For coaches/analyst, this could be used to analyze the crossing patterns of teams from certain location and train teams to attack/defend from similar locations.
 
 The entire code is made available here: [GitHub](https://github.com/samirak93/Where-do-teams-cross-/blob/master/crosses_KD.py)
 
