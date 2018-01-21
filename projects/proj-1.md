@@ -1,9 +1,23 @@
----
-layout: post
-title: 'Project One'
----
-Mauris velit metus, tempor gravida nulla eget, auctor accumsan tellus. Curabitur volutpat sed dolor quis tempus. In scelerisque aliquam felis at tincidunt. Proin non augue fringilla, [pretium justo vitae](#), maximus dui. Nunc ipsum nisi, fermentum sit amet volutpat cursus, sodales ac nisl. Quisque nec tellus sem. Cras pharetra felis non quam mollis, nec efficitur lectus aliquet. Maecenas ipsum felis, eleifend nec [semper venenatis](#), consequat ut nunc. Donec est augue, facilisis quis placerat sed, imperdiet sit amet neque. Maecenas nec risus metus. Nunc non condimentum ipsum. Phasellus consectetur dapibus massa, convallis iaculis nisi vestibulum id. Phasellus et fringilla augue. Donec consequat dui ut rutrum elementum. Aenean nisi arcu, ornare eu lacus vel, faucibus tempor tortor.
+<b><h>Where do teams cross?</h></b>
 
-{% include image.html url="http://www.gratisography.com" image="projects/proj-1/dog.jpg" %}
+This post looks at building an interactive tool, using python, to find out the end locations of crosses based on user input (cross start location). The user input gets the cross start location. Using that, the crosses nearby the start location are identified and their corresponding end locations are plotted on the graph. This uses a simple concept called cKDTree, which uses nearest-neighbor lookup concept.
 
-{% include image.html url="http://www.gratisography.com" image="projects/proj-1/wall.jpg" %}
+
+Application:
+
+When trying to create this interactive graph, I wanted to have look at this from a coach/analyst perspective. Ideally, people would want to see where successful crosses (crosses that either lead to a goal/ shot at goal) end up. These are usually represented by graphs similar to below.
+
+![alt text](https://raw.githubusercontent.com/samirak93/analytics-blog/master/_posts/images/heat_map.jpg)
+
+<i>Crosses Heat Map. (Credits: Samirak93)</i>
+
+
+
+But these images usually depict the entire dataset of crosses that are analysed. If filtered down further, they can be filtered down with respect to a particular player/team.
+
+I wanted to narrow this same image to the point where these images are rendered based on user interactivity. So if the user clicks on a particular location on the pitch, the crosses nearest to it are collected and their corresponding end locations are shown. This is much more useful when user wants to visualise crosses only from certain locations rather than getting a complete view.
+
+The entire code is made available here: https://github.com/samirak93/Crosses_KD
+
+The data used here belong to Opta and are not made available in the above link.
+
