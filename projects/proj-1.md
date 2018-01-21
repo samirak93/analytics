@@ -10,7 +10,7 @@ This post looks at building an interactive tool, using python, to find out the e
 
 When trying to create this interactive graph, I wanted to look at this from a coach/analyst perspective. Ideally, people would want to see where successful crosses <i>(crosses that either lead to a goal/ shot at goal)</i> end up. These are usually represented by graphs similar to below.
 
-![alt text](https://raw.githubusercontent.com/samirak93/analytics-blog/master/_posts/images/heat_map.jpg)
+![alt text](https://raw.githubusercontent.com/samirak93/analytics/gh-pages/assets/img/projects/proj-1/thumb.jpg)
 
 <i>Crosses Heat Map. (Credits: Samirak93)</i>
 
@@ -27,9 +27,16 @@ The input here is the cross start location X and Y coordinates. One of the param
 
 <b>"point_tree.query_ball_point"</b> is the function to find the cross_end X and Y coordinates. 
 
-![alt text](https://raw.githubusercontent.com/samirak93/analytics-blog/master/_posts/images/KDTree.gif)
+![alt text](https://raw.githubusercontent.com/samirak93/analytics/gh-pages/assets/img/projects/proj-1/KDTree.gif)
 
 <i>Blue Circle is Click location and outer green circle is search radius limit(Credits: Samirak93)</i>
+
+
+
+![alt text](https://raw.githubusercontent.com/samirak93/analytics/gh-pages/assets/img/projects/proj-1/heat_map2.jpg)
+
+<i>Generating Heat Maps(Credits: Samirak93)</i>
+
 
 For coaches/analyst, this could be used to analyze the crossing patterns of teams from certain location and train teams to attack/defend from similar locations.
 
