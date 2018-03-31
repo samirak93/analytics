@@ -49,7 +49,7 @@ If you've any comments/issues on the post/code, please do let me know. I'm a beg
 <b>Note:</b>The data used here belongs to Opta and hence are not made available in the above code link.
 
 
-###Update 31-Mar-18
+### Update 31-Mar-18
 
 I've managed to built this tool in a bokeh plot and hosted it on heroku. 
 
