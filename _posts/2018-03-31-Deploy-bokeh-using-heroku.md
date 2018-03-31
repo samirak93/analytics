@@ -1,5 +1,3 @@
-# Welcome to StackEdit!
-
 # Deploy bokeh server plots using Heroku
 
 This is a small blog post, guiding you with steps to deploy a bokeh python server plot using Heroku. There are very little resources online, that outline the process. The documentation is not very clear (least I found it little confusing, when different people suggest different methods) and hopefully this blog provides a clear guideline. 
