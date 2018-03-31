@@ -106,7 +106,7 @@ The app log (post deployment) can be seen by selecting more--> view logs in your
 All the runtime issues and errors will be provided on the log. 
 
 
-You can find my server plot hosted here [](https://cross-locations.herokuapp.com/myapp)
+You can find my server plot hosted [**here**](https://cross-locations.herokuapp.com/myapp)
 
 Hope this blog post provides a clear explanation and helps you to deploy your own bokeh server plots on Heroku. 
 
