@@ -57,7 +57,7 @@ The tool can be seen here.
 
 [Tool](https://cross-locations.herokuapp.com/myapp)
 
-In case you'd like to read the guidelines on hosting bokek server plots on Heroku, you can find my blog post here.
+In case you'd like to read the steps for hosting bokeh server plots on Heroku, you can find my blog post here.
 
 [Blog Post](https://samirak93.github.io/analytics/Deploy-bokeh-server-plots-using-heroku.html)
 
