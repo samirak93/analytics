@@ -1,7 +1,7 @@
 
 This is a small blog post, guiding you with steps to deploy a bokeh python server plot using Heroku. There are very little resources online, that outline these processes. The documentation is not very clear (least I found it confusing, when different people suggest different methods) and hopefully this blog provides a clear guideline. 
 
-Assuming you've your serve plot ready to be deployed, let's begin by creating folders, in Github repository, that'd be required. My **herokuapp** GitHub repository has the following folders directory.
+Assuming you've your server plot ready to be deployed, let's begin by creating folders, in Github repository, that'd be required for heroku. My **herokuapp** GitHub repository has the following folders directory.
 
 myapp **(folder)**<br/>
    |<br/>
@@ -20,12 +20,12 @@ This is how my repository looks like.
 
 This is easy since this is how you'd have setup your folders to run the "myapp" locally in your system.
 
-Now, got to http://heroku.com and create a free account or login to your existing account. 
+Now, go to http://heroku.com and create a free account or login to your existing account. 
 
 Once you login, **create a new app** and ***remember the name of the app***. We'd need to mention the app name in later steps. 
 
 
-The main part, creating text documents for heroku, is the trickiest part. There are various answers online on creating these documents. I had to trial out few methods before getting it right. 
+The main part of the process, creating text documents for heroku, is the trickiest part. There are various answers online on creating these documents. I had to trial out few methods before getting it right. 
 
 So the whole **myapp** folder is within my main repository, **herokuapp**. Inside herokuapp, you'd have to create 3 more documents. Note that these file names are case sensitive.
 
@@ -60,6 +60,7 @@ tornado==5.0.1
 
 The issue I'd faced with requirements is that bokeh and tornado version has to be correct, to avoid timeout errors on heroku. So I figured it out (from stackoverflow and other GitHub bokeh chat) that **tornado version** has to be mentioned as **5.0.1**. Apart from scikit-learn (which I needed for my code), *all the other requirements are mandatory (bokeh server plot uses them)*. Incase you use other libraries in your python code, add them in the list along with their versions.  
 
+
 ### runtime.txt
 ```sh
 python-2.7.14
@@ -82,7 +83,7 @@ herokuapp (GitHub repository)<br/>
 
 Now it's time to deploy the bokeh plot. You could use git commands to deploy the files from command/terminal, or you could manually deploy it from heroku dashboard (which I'd explain here).
 
-Go to the heroku dashboard (https://dashboard.heroku.com/apps/) select the app you've created. Once inside it, go to the "**deploy**" tab and select "**Deployment method**" as GitHub and connect your GitHub account with the app. 
+Go to the heroku dashboard (https://dashboard.heroku.com/apps/) and select the app you've created. Once inside it, go to the "**deploy**" tab and select "**Deployment method**" as GitHub and connect your GitHub account with the app. 
 
 ![GitHub Connect](https://raw.githubusercontent.com/samirak93/analytics/gh-pages/blog_images/images/blog1/connect_github.png)
 
@@ -90,7 +91,7 @@ Once that is completed, scroll down and select the repository you've created for
 
 Once that is done, you can either choose "Automatic deploy', which will deploy and update the app automatically, every time you make a commit to the repository.
 
-Else you could select "Manual deploy" and deploy the repository manually each time. 
+Else you could select "Manual deploy" and deploy the repository manually each time you update the repository. 
 You can check build log inside "**Build **master**"**. Any error (in requirements/runtime txt files) will be shown here.
 
 
@@ -106,7 +107,7 @@ The app log (post deployment) can be seen by selecting more--> view logs in your
 All the runtime issues and errors will be provided on the log. 
 
 
-You can find my server plot hosted [**here**](https://cross-locations.herokuapp.com/myapp)
+You can find my bokeh server plot hosted [**here**](https://cross-locations.herokuapp.com/myapp)
 
 Hope this blog post provides a clear explanation and helps you to deploy your own bokeh server plots on Heroku. 
 
