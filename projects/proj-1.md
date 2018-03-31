@@ -48,4 +48,19 @@ If you've any comments/issues on the post/code, please do let me know. I'm a beg
 
 <b>Note:</b>The data used here belongs to Opta and hence are not made available in the above code link.
 
+
+###Update 31-Mar-18
+
+I've managed to built this tool in a bokeh plot and hosted it on heroku. 
+
+The tool can be seen here.
+
+https://cross-locations.herokuapp.com/myapp
+
+In case you'd like to read the guidelines on hosting bokek server plots on Heroku, you can find my blog post here.
+
+[Blog Post](https://samirak93.github.io/analytics/Deploy-bokeh-server-plots-using-heroku.html)
+
+
+
 Leave your comments below or contact me on twitter: [@SamiraK93](https://twitter.com/Samirak93)
