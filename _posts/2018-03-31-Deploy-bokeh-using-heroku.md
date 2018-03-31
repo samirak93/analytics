@@ -4,15 +4,15 @@ This is a small blog post, guiding you with steps to deploy a bokeh python serve
 
 Assuming you've your serve plot ready to be deployed, let's begin by creating folders that'd be required. My **herokuapp** has the following folders directory.
 
-myapp
-   |
-   +---data **(folder)**
-   |    +---data.csv
-   |
-   +---main.py
-   +---static **(folder)**
-   |    +---images **(folder)**
-   |    |    +---images.png
+myapp<br/>
+   |<br/>
+   +---data **(folder)**<br/>
+   |    +---data.csv<br/>
+   |<br/>
+   +---main.py<br/>
+   +---static **(folder)**<br/>
+   |    +---images **(folder)**<br/>
+   |    |    +---images.png<br/>
    
 The same has to be followed while creating repository in github. This is how my repository looks like.
 
