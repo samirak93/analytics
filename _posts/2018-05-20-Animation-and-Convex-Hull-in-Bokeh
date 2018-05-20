@@ -1,8 +1,3 @@
-# Welcome to StackEdit!
-
-# Deploy bokeh server plots using Heroku
-
-
 This blog post looks at creating an animation slider (with Play and Pause buttons) to plot 2D coordinates of player movement in a soccer game. Also, this post explains the steps to create a toggle button, to show/hide the convex hull plot of the teams. I've used [Bokeh](https://bokeh.pydata.org) to plot the viz. Bokeh gives a good looking viz in the browser and also provides smooth interface for animation. I've also tried the same with [Matplotlib](https://matplotlib.org) and it was successful. But the features of bokeh (compared to matplotlib) makes it a better choice. I could write another separate blog post, if you're interested to know the same process in Matplotlib. 
 
 The dataset used in the post is from **STATS**. You can submit an [online](https://www.stats.com/data-science/) request to obtain the dataset from them. The data used in the viz is not shared.
@@ -287,10 +282,14 @@ The output should be like this.
 ![enter image description here](https://github.com/samirak93/analytics/blob/gh-pages/blog_images/images/blog2/ezgif-1-ad8f686b11.gif?raw=true)
 
 
-You can modify the plot based on your preference. 
+Since bokeh is easy to use and modify, you can modify the plot based on your own preference. 
 
-Hope this blog posts had simplified the process. The complete code can be found here. 
+Hope this blog posts provide a clear explanation. 
 
-Would appreciate your comments regarding the post/code used here.
+The complete code can be found here. 
+
+[Animation Code](https://github.com/samirak93/analytics/blob/gh-pages/blog_images/images/blog2/main.py)
+
+I'd highly appreciate your comments regarding the post/code used here.
 
 Thanks.
