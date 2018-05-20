@@ -100,7 +100,7 @@ Now create the plot as below.
     
     curdoc().title = "Game Animation"
 
-Now run the bokeh server using **bokeh serve --show myapp**. For the plot to appear, run the bokeh serve from the directory where your myapp folder is placed. For example, If the myapp folder is located inside your dekstop/python directory, traverse (cd desktop/python) to the folder on terminal/cmd and run the bokeh serve command. This should show the plot in the browser.
+Now run the bokeh server using **bokeh serve --show myapp**. For the plot to appear, run the bokeh serve from the directory where your myapp folder is placed. For example, If the myapp folder is located inside your desktop/python directory, traverse (cd desktop/python) to the folder on terminal/cmd and run the bokeh serve command. This should show the plot in the browser.
 
 The plot will only show the player coordinates at time 0. Now we need to add a slider and vary the time to show the full sequence of event.
 
@@ -123,7 +123,7 @@ Once the slider is created, you'd need to build a function to get the call back 
         
         source.data = dict(x=x, y=y,player_id=player_id,color=c)
 
-Everytime the **source** gets updated, all the plots associated with '**source**' will get updated as well, which includes the scatter plot **st** and **labels**, since we're using this source to plot those data.
+Every time the **source** gets updated, all the plots associated with '**source**' will get updated as well, which includes the scatter plot **st** and **labels**, since we're using this source to plot those data.
 
 To call the above function when the slider is updated, we add
 
