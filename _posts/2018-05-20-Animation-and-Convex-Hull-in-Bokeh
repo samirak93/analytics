@@ -1,3 +1,7 @@
+# Welcome to StackEdit!
+
+# Deploy bokeh server plots using Heroku
+
 
 This blog post looks at creating an animation slider (with Play and Pause buttons) to plot 2D coordinates of player movement in a soccer game. Also, this post explains the steps to create a toggle button, to show/hide the convex hull plot of the teams. I've used [Bokeh](https://bokeh.pydata.org) to plot the viz. Bokeh gives a good looking viz in the browser and also provides smooth interface for animation. I've also tried the same with [Matplotlib](https://matplotlib.org) and it was successful. But the features of bokeh (compared to matplotlib) makes it a better choice. I could write another separate blog post, if you're interested to know the same process in Matplotlib. 
 
@@ -36,6 +40,7 @@ Once the player and team tags are added, we'd have the data as below
 
 Now import all necessary packages.
 
+    # -*- coding: utf-8 -*-
     import numpy as np  
     import pandas as pd  
     from bokeh.io import curdoc  
@@ -78,12 +83,17 @@ Now create the plot as below.
                   x_range=[-52.5,52.5], y_range=[-34, 34],toolbar_location="below")
                   
     plot.image_url(url=["myapp/static/images/base.png"],x=-52.5,y=-34,w=105,h=68,anchor="bottom_left")
+    
+    #hide axis and grid lines
+    plot.xgrid.grid_line_color = None
+    plot.ygrid.grid_line_color = None  
+    plot.axis.visible=False
 
 
     #Plot the player coordinates
     st=plot.scatter('x','y', source=source,size=20,fill_color='color')
 
-    #Add label to the scatter plot
+    #Add labels to the scatter plot
     labels=LabelSet(x='x', y='y', text='player_id', level='glyph',  
                       x_offset=-5, y_offset=-7, source=source, render_mode='canvas',text_color='white',text_font_size="10pt")
                       
@@ -102,7 +112,7 @@ The plot will only show the player coordinates at time 0. Now we need to add a s
     freq = Slider(title="Game Time", value=0, start=all_team.time.unique().min(), end=all_team.time.unique().max(), step=1)
 
 
-Define the start and end time using **all_team.time.unique().min()/max()**.
+We define the start and end time using **all_team.time.unique().min()/max()**.
 
 Once the slider is created, you'd need to build a function to get the call back when slider is updated. 
 
@@ -117,11 +127,56 @@ Once the slider is created, you'd need to build a function to get the call back 
         
         source.data = dict(x=x, y=y,player_id=player_id,color=c)
 
-Everytime the source gets updated, the plots associated with 'source' will get updated, which includes the scatter plot st and labels, since we're using this source to plot those data.
+Everytime the source gets updated, all the plots associated with '**source**' will get updated, which includes the scatter plot st and labels, since we're using this source to plot those data.
+
+To call the above function when the slider is updated, 
+
+    for w in [freq]:  
+        w.on_change('value', update_data)
+
+Now add the slider to the plot layout using the Widgetbox.
+
+    inputs = widgetbox(freq)
+
+Now if you run the bokeh serve again, you should be able to see the slider and the dynamic plot. 
 
 
 ![enter image description here](https://raw.githubusercontent.com/samirak93/analytics/gh-pages/blog_images/images/blog2/Screen%20Shot%202018-05-20%20at%201.22.17%20PM.png)
 
 
-To create the Play and Pause button, w
+Now add the button to create the play and pause animation. 
+
+    button = Button(label='► Play', width=60)
+
+To allow ► in your browser, add "**# -*- coding: utf-8 -*-**" in the beginning of your code. 
+
+
+    def animate_update():  
+        year = freq.value + 1 #gets value of slider + 1
+      if year > all_team.time.max():  
+            year = all_team.time[0]  #if slider value+1 is above max, reset to 0
+        freq.value = year  
+      
+      
+      
+    #Update the label on the button once the button is clicked
+    def animate():  
+        if button.label == '► Play':  
+            button.label = '❚❚ Pause'  
+      curdoc().add_periodic_callback(animate_update, 50)  #50 is speed of animation
+        else:  
+            button.label = '► Play'  
+      curdoc().remove_periodic_callback(animate_update)  
+      
+    #callback when button is clicked.
+    button.on_click(animate)
+
+
+Update the WidgetBox with the button and run the bokeh server to see the animation. 
+
+    inputs = widgetbox(freq,button)
+
+
+![enter image description here](https://raw.githubusercontent.com/samirak93/analytics/gh-pages/blog_images/images/blog2/ezgif-1-0e4553e448.gif)
+
 
