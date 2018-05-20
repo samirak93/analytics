@@ -180,3 +180,117 @@ Update the WidgetBox with the button and run the bokeh server to see the animati
 ![enter image description here](https://raw.githubusercontent.com/samirak93/analytics/gh-pages/blog_images/images/blog2/ezgif-1-0e4553e448.gif)
 
 
+To plot te convex hull, we'd need to create few more variables. 
+
+    team_att =all_team[all_team.team_id==1]  
+    team_def =all_team[all_team.team_id==2]
+
+We've now split the data frame to hold separate data for attacking and defending team, since we'd plot convex hull for each teams. 
+
+We then use numpy's vstack feature to create the below arrays.
+
+    t1 = np.vstack((team_att[team_att.time==i].x, team_att[team_att.time==i].y)).T  
+    t2 = np.vstack((team_def[team_def.time == i].x, team_def[team_def.time == i].y)).T
+
+Again, note that the time is 0 here. Once we have the arrays, we use the scipy convex hull package to get the vertices of the hull.
+
+    hull=ConvexHull(t1)  
+    hull2= ConvexHull(t2)  
+    xc = t1[hull.vertices, 0]  
+    yc = t1[hull.vertices, 1]  
+      
+    ax = t2[hull2.vertices, 0]  
+    ay = t2[hull2.vertices, 1]
+
+
+Create 2 separate CDS to hold these values. 
+
+    source2 = ColumnDataSource(data=dict(xc=xc,yc=yc))  
+    source3 = ColumnDataSource(data=dict(ax=ax,ay=ay))
+
+
+    team_Blue=plot.patch('xc', 'yc', source=source2, alpha=0.3, line_width=3, fill_color='dodgerblue')  
+    team_red = plot.patch('ax', 'ay',source=source3, alpha=0.3, line_width=3,fill_color='orangered')
+
+If you run the bokeh server now, the convex hull will be plotted only for the time 0. In the function **update_data**, add the above steps to plot the convex hull dynamically, based on the slider value. 
+
+The updated function **update_data** looks as below:
+
+    def update_data(attrname, old, new):  
+      
+        k = freq.value  
+      
+        x = all_team[all_team.time == k].x  
+        y = all_team[all_team.time == k].y  
+        source.data = dict(x=x, y=y,player_id=player_id,color=c)  
+      
+      
+        t1 = np.vstack((team_att[team_att.time==k].x, team_att[team_att.time==k].y)).T  
+        t2 = np.vstack((team_def[team_def.time==k].x, team_def[team_def.time==k].y)).T  
+      
+        hull = ConvexHull(t1)  
+        hull2= ConvexHull(t2)  
+        xc = t1[hull.vertices, 0]  
+        yc = t1[hull.vertices, 1]  
+      
+        ax = t2[hull2.vertices, 0]  
+        ay = t2[hull2.vertices, 1]  
+      
+      
+        source2.data=dict(xc=xc,yc=yc)  
+        source3.data=dict(ax=ax,ay=ay)
+
+
+So now if you run the bokeh server, the convex hull will be updated when the slider gets updated.
+
+![enter image description here](https://github.com/samirak93/analytics/blob/gh-pages/blog_images/images/blog2/convex.gif?raw=true)
+
+
+Now to toggle the convex hull on/off, add a CheckboxButtonGroup to the plot. 
+
+
+    checkbox_blue=CheckboxButtonGroup(labels=["Team Blue"],button_type = "primary")  
+    checkbox_red=CheckboxButtonGroup(labels=["Team Red"],button_type = "primary")
+
+
+There are multiple ways to toggle the convex hull onn/off. I've used the CustomJS option to set the patch alpha when the toggle button is clicked. 
+
+
+Update the plot.patch as below.
+
+    #alpha is changed to 0
+    team_Blue=plot.patch('xc', 'yc', source=source2, alpha=0, line_width=3, fill_color='dodgerblue')  
+    team_red = plot.patch('ax', 'ay',source=source3, alpha=0, line_width=3,fill_color='orangered')
+
+
+Now add a customJS callback to these patches. 
+
+    #l0.glyph.fill_alpha sets the alpha of the patch
+    checkbox_blue.callback = CustomJS(args=dict(l0=team_Blue, checkbox=checkbox_blue), code="""  
+    l0.visible = 0 in checkbox.active;  
+    l0.glyph.fill_alpha = 0.3;  
+    """)  
+    checkbox_red.callback = CustomJS(args=dict(l0=team_red, checkbox=checkbox_red), code="""  
+    l0.visible = 0 in checkbox.active;  
+    l0.glyph.fill_alpha = 0.3;  
+    """)
+
+Add a paragraph label and update the WidgetBox and run the server.
+
+    p = Paragraph(text="""Select team  to plot convex hull""",  
+    width=200)  
+      
+    inputs = widgetbox(freq,button,p,checkbox_blue,checkbox_red)
+
+The output should be like this.
+
+![enter image description here](https://github.com/samirak93/analytics/blob/gh-pages/blog_images/images/blog2/ezgif-1-ad8f686b11.gif?raw=true)
+
+
+You can modify the plot based on your preference. 
+
+Hope this blog posts had simplified the process. The complete code can be found here. 
+
+Would appreciate your comments regarding the post/code used here.
+
+Thanks.
