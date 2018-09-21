@@ -208,8 +208,8 @@ Update the WidgetBox with the button and run the bokeh server to see the animati
 To plot the convex hull, we'd need to create few more variables. 
 
 
-    team_att =all_team[all_team.team_id==1]  
-    team_def =all_team[all_team.team_id==2]
+    team_att =all_team[all_team.team_id==2]  
+    team_def =all_team[all_team.team_id==1]
 
 
 We've now split the data frame to hold separate data for attacking and defending team, since we'd have to plot convex hull for each team. 
