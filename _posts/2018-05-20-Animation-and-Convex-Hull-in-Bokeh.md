@@ -292,8 +292,8 @@ There are multiple ways to toggle the convex hull on/off. I've used the CustomJS
 Update the plot.patch as below, so that the patch is initially not visible in the plot.
 
     #alpha is changed to 0
-    team_Blue=plot.patch('xc', 'yc', source=source2, alpha=0, line_width=3, fill_color='dodgerblue')  
-    team_red = plot.patch('ax', 'ay',source=source3, alpha=0, line_width=3,fill_color='orangered')
+    team_Blue=plot.patch('xc', 'yc', source=source2, alpha=0, line_width=3, fill_color='orangered')  
+    team_red = plot.patch('ax', 'ay',source=source3, alpha=0, line_width=3,fill_color='dodgerblue')
 
 
 Now add a customJS callback to these patches. This callback will update the patch alpha to 0.3. This is a shortcut to make this work. The other alternative solution would be to add the convex hull plot as a children to the plot layout. 
