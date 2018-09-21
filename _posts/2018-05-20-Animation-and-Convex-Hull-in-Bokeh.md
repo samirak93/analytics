@@ -282,8 +282,8 @@ So now if you run the bokeh server, the convex hull also will be updated when th
 Now to toggle the convex hull on/off, add a CheckboxButtonGroup to the plot. 
 
 
-    checkbox_blue=CheckboxButtonGroup(labels=["Team Blue"],button_type = "primary")  
-    checkbox_red=CheckboxButtonGroup(labels=["Team Red"],button_type = "primary")
+    checkbox_blue=CheckboxButtonGroup(labels=["Team Red"],button_type = "primary")  
+    checkbox_red=CheckboxButtonGroup(labels=["Team Blue"],button_type = "primary")
 
 
 There are multiple ways to toggle the convex hull on/off. I've used the CustomJS option to set the convex hull patch alpha when the toggle button is clicked. 
