@@ -1,5 +1,4 @@
 
-#### Network Analysis <br/>
 #### (Team Project - Samir, Pablo, Amaya, Sarah and Arianne - MSBA UC Irvine 2018-19
 
 
