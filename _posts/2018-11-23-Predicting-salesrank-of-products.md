@@ -281,7 +281,7 @@ plt.show()
 ```
 
 
-![png](https://github.com/samirak93/analytics/blob/gh-pages/blog_images/images/blog3/output_7_0.png)
+![png](https://raw.githubusercontent.com/samirak93/analytics/gh-pages/blog_images/images/blog3/output_7_0.png)
 
 
 
@@ -318,7 +318,7 @@ plt.show()
 ```
 
 
-![png](https://github.com/samirak93/analytics/blob/gh-pages/blog_images/images/blog3/output_10_0.png)
+![png](https://raw.githubusercontent.com/samirak93/analytics/gh-pages/blog_images/images/blog3/output_10_0.png)
 
 
 #### Closeness Centrality:
@@ -340,7 +340,7 @@ plt.show()
 ```
 
 
-![png](https://github.com/samirak93/analytics/blob/gh-pages/blog_images/images/blog3/output_12_0.png)
+![png](https://raw.githubusercontent.com/samirak93/analytics/gh-pages/blog_images/images/blog3/output_12_0.png)
 
 
 #### Betweenness Centrality:
@@ -361,7 +361,7 @@ plt.show()
 ```
 
 
-![png](https://github.com/samirak93/analytics/blob/gh-pages/blog_images/images/blog3/output_14_0.png)
+![png](https://raw.githubusercontent.com/samirak93/analytics/gh-pages/blog_images/images/blog3/output_14_0.png)
 
 
 #### Eigen Vector Centrality:
@@ -382,7 +382,7 @@ plt.show()
 ```
 
 
-![png](https://github.com/samirak93/analytics/blob/gh-pages/blog_images/images/blog3/output_16_0.png)
+![png](https://raw.githubusercontent.com/samirak93/analytics/gh-pages/blog_images/images/blog3/output_16_0.png)
 
 
 #### Hub and Authority Score:
@@ -408,7 +408,7 @@ plt.show()
 
 
 
-![png](https://github.com/samirak93/analytics/blob/gh-pages/blog_images/images/blog3/output_18_1.png)
+![png](https://raw.githubusercontent.com/samirak93/analytics/gh-pages/blog_images/images/blog3/output_18_1.png)
 
 
 
@@ -425,7 +425,7 @@ plt.show()
 ```
 
 
-![png](https://github.com/samirak93/analytics/blob/gh-pages/blog_images/images/blog3/output_19_0.png)
+![png](https://raw.githubusercontent.com/samirak93/analytics/gh-pages/blog_images/images/blog3/output_19_0.png)
 
 
 #### Average Degree Neighbor:
@@ -445,7 +445,7 @@ plt.show()
 ```
 
 
-![png](https://github.com/samirak93/analytics/blob/gh-pages/blog_images/images/blog3/output_21_0.png)
+![png](https://raw.githubusercontent.com/samirak93/analytics/gh-pages/blog_images/images/blog3/output_21_0.png)
 
 
 #### Diameter of Network:
@@ -1557,7 +1557,7 @@ plt.show()
 ```
 
 
-![png](https://github.com/samirak93/analytics/blob/gh-pages/blog_images/images/blog3/output_44_0.png)
+![png](https://raw.githubusercontent.com/samirak93/analytics/gh-pages/blog_images/images/blog3/output_44_0.png)
 
 
 
@@ -1582,7 +1582,7 @@ plt.ylabel('Residuals')
 
 
 
-![png](https://github.com/samirak93/analytics/blob/gh-pages/blog_images/images/blog3/output_45_1.png)
+![png](https://raw.githubusercontent.com/samirak93/analytics/gh-pages/blog_images/images/blog3/output_45_1.png)
 
 
 ### Interpretation from model:
