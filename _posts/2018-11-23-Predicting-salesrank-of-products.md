@@ -1,5 +1,5 @@
 
-## Network Analysis
+## Network Analysis (Team Project - Samir, Pablo, Amaya, Sarah and Arianne - MSBA UC Irvine 2018-19
 
 
 ```python
