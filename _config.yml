@@ -1,7 +1,7 @@
 # Build settings
 
-#markdown: kramdown
-markdown: redcarpet
+markdown: kramdown
+
 permalink: none
 plugins:             [jekyll-sitemap, jekyll-feed,  jekyll-seo-tag]
 
