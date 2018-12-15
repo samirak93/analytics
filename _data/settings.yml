@@ -58,7 +58,7 @@ projects:
 - {name: 'Where do teams cross?', folder: 'proj-1', file: 'projects/proj-1.html'}
 - {name: 'Dynamic Pass Network Map', folder: 'proj-2', file: 'projects/proj-2.html'}
 - {name: 'Chicago Crime Prediction and Alert', folder: 'proj-3', file: 'projects/Chicago_Crime_Project.html'}
-- {name: 'Chicago Crime Prediction and Alert', folder: 'proj-4', file: 'projects/Amazon-Predicting-salesrank-of-products.html'}
+- {name: 'Predicting Amazon Salesrank using Network Analysis', folder: 'proj-4', file: 'projects/Amazon-Predicting-salesrank-of-products.html'}
 
 #-------------------------------
 # Contact Section
