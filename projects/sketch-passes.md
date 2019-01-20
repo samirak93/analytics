@@ -9,7 +9,7 @@ This is a idea in development, where user can sketch a single pass and find simi
 
 **Note:** This is a work in progress and the next stage would be to sketch a sequence of passes and find similar passes.
 
-**Live App** : [Link](https://sketch-passes.herokuapp.com/myapp)
+**Live App** : [https://sketch-passes.herokuapp.com/myapp](https://sketch-passes.herokuapp.com/myapp)
 
 
 ![snapshot](https://raw.githubusercontent.com/samirak93/analytics/gh-pages/assets/img/projects/proj-5/thumb.jpg)
