@@ -13,7 +13,7 @@ menu:
 # NOTE: Providing SEO information will make this website more searchable on the internet.
 
 seo:
-  description: 'Personal blog about sports and analytics '
+  description: 'Personal blog about sports, analytics and other things. '
   rel-author: 'https://plus.google.com/u/0/#'
   rel-publisher: 'https://plus.google.com/u/0/#'
 
@@ -62,6 +62,7 @@ projects:
 - {name: 'Dynamic Pass Network Map', folder: 'proj-2', file: 'projects/proj-2.html'}
 - {name: 'Chicago Crime Prediction and Alert', folder: 'proj-3', file: 'projects/Chicago_Crime_Project.html'}
 - {name: 'Predicting Amazon Salesrank using Network Analysis', folder: 'proj-4', file: 'projects/Amazon-Predicting-salesrank-of-products.html'}
+- {name: 'Sketch-Passes', folder: 'proj-5', file: 'https://sketch-passes.herokuapp.com/myapp'}
 
 #-------------------------------
 # Contact Section
