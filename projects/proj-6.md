@@ -10,9 +10,6 @@ This post looks at creating a python script to automate the data collectiong and
 <b>Data Collection and Processing:
 
 ```# Data Processing for making Fireball Viz
-# -- Samira Kumar Varadharajan --
-# -- 21-March-2019 --
-# coding: utf-8
 
 #Import packages
 
