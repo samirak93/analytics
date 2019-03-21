@@ -1,7 +1,7 @@
 
 ---
 layout: post
-title: ' Visualizing Fireballs and Bolides'
+title: 'Visualizing Fireballs and Bolides'
 ---
 
 This post looks at creating a python script to automate the data collectiong and processing needed to build the visualization.
