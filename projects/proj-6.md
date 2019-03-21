@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: 'Visualizing Fireballs and Bolides'
