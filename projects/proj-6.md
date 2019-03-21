@@ -96,6 +96,6 @@ The entire code can be found here: [Code](https://github.com/samirak93/Fireballs
 <b>Final Viz:
 
 
-<img src="https://raw.githubusercontent.com/samirak93/Fireballs-Data-Visualization/master/Main.png" width="15">
+<img src="https://raw.githubusercontent.com/samirak93/Fireballs-Data-Visualization/master/Main.png" width="700">
 
 Feedbacks are appreciated!!
