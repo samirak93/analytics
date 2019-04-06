@@ -64,6 +64,8 @@ projects:
 - {name: 'Predicting Amazon Salesrank using Network Analysis', folder: 'proj-4', file: 'projects/Amazon-Predicting-salesrank-of-products.html'}
 - {name: 'Sketch-Passes', folder: 'proj-5', file: 'projects/sketch-passes.html'}
 - {name: 'Visualizing Fireballs and Bolides', folder: 'proj-6', file: 'projects/proj-6.html'}
+- {name: 'Visualizing Snow Storms in USA', folder: 'proj-7', file: 'projects/snow-storm.html'}
+
 
 #-------------------------------
 # Contact Section
