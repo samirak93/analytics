@@ -58,6 +58,7 @@ contact: >
 # Work Section
 
 projects:
+- {name: 'Predicting Potential Receiver of Pass', folder: 'proj-8', file: 'projects/predicting-passes.html'}
 - {name: 'Where do teams cross?', folder: 'proj-1', file: 'projects/proj-1.html'}
 - {name: 'Dynamic Pass Network Map', folder: 'proj-2', file: 'projects/proj-2.html'}
 - {name: 'Chicago Crime Prediction and Alert', folder: 'proj-3', file: 'projects/Chicago_Crime_Project.html'}
