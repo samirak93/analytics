@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Visualizing Fireballs and Bolides'
+title: 'Predicting Potential Receiver of Pass'
 ---
 
 **MLSA18 Football Pass Prediction Challenge - predicting the potential pass receiver.**
