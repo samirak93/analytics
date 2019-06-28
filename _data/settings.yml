@@ -56,9 +56,7 @@ contact: >
   # 
   You can contact me on LinkedIn [here](https://www.linkedin.com/in/samirakumar/).<br><br>
   You may also contact me [through my email](mailto:samirakumar@yahoo.com) or send a direct message on twitter:  
-  <a href="https://twitter.com/messages/compose?recipient_id=&ref_src=twsrc%5Etfw" class="twitter-dm-button" data-size="large" data-lang="en" data-screen-name="samirak93" data-show-count="false">Message @samirak93</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-  I'd always appreciate feedback :)
+  <a href="https://twitter.com/messages/compose?recipient_id=&ref_src=twsrc%5Etfw" class="twitter-dm-button" data-size="large" data-lang="en" data-screen-name="samirak93" data-show-count="false">@samirak93</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 #-------------------------------
 
 # Work Section
@@ -67,12 +65,11 @@ projects:
 - {name: 'Predicting Potential Receiver of Pass', folder: 'proj-8', file: 'projects/predicting-passes.html'}
 - {name: 'Where do teams cross?', folder: 'proj-1', file: 'projects/proj-1.html'}
 - {name: 'Dynamic Pass Network Map', folder: 'proj-2', file: 'projects/proj-2.html'}
-- {name: 'Chicago Crime Prediction and Alert', folder: 'proj-3', file: 'projects/Chicago_Crime_Project.html'}
-- {name: 'Predicting Amazon Salesrank using Network Analysis', folder: 'proj-4', file: 'projects/Amazon-Predicting-salesrank-of-products.html'}
 - {name: 'Sketch-Passes', folder: 'proj-5', file: 'projects/sketch-passes.html'}
 - {name: 'Visualizing Fireballs and Bolides', folder: 'proj-6', file: 'projects/proj-6.html'}
 - {name: 'Visualizing Snow Storms in USA', folder: 'proj-7', file: 'projects/snow-storm.html'}
-
+- {name: 'Chicago Crime Prediction and Alert', folder: 'proj-3', file: 'projects/Chicago_Crime_Project.html'}
+- {name: 'Predicting Amazon Salesrank using Network Analysis', folder: 'proj-4', file: 'projects/Amazon-Predicting-salesrank-of-products.html'}
 
 #-------------------------------
 # Contact Section
