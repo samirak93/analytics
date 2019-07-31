@@ -3,10 +3,6 @@
 markdown: kramdown
 highlighter: rouge
 
-kramdown:
-  input: GFM
-  auto_ids: true
-  syntax_highlighter: rouge
 permalink: none
 plugins:             [jekyll-sitemap, jekyll-feed,  jekyll-seo-tag]
 
