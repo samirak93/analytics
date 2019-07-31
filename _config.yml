@@ -1,10 +1,18 @@
 # Build settings
+kramdown:
+  # Use GitHub flavored markdown, including triple backtick fenced code blocks
+  input: GFM
+  # Jekyll 3 and GitHub Pages now only support rouge for syntax highlighting
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    # Use existing pygments syntax highlighting css
+    css_class: 'highlight'
 
-markdown: redcarpet
-highlighter: rouge
+#markdown: redcarpet
+#highlighter: rouge
 
-permalink: none
-plugins:             [jekyll-sitemap, jekyll-feed,  jekyll-seo-tag]
+#permalink: none
+#plugins:             [jekyll-sitemap, jekyll-feed,  jekyll-seo-tag]
 
 port: 4000
 
