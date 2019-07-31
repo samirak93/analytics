@@ -38,7 +38,7 @@ Once the player and team tags are added, we'd have the data as below
 
 Now import all necessary packages.
 
-
+```py
     # -*- coding: utf-8 -*-
     import numpy as np  
     import pandas as pd  
@@ -48,42 +48,42 @@ Now import all necessary packages.
     from bokeh.models.widgets import Slider,Paragraph,Button,CheckboxButtonGroup  
     from bokeh.plotting import figure  
     from scipy.spatial import ConvexHull
-
+```
 
 My game sequence time starts at 0. So I've created a variable to initialise time and calculated initial player coordinates based on that. Since my slider time will always start at 0 (when the plot is displayed on browser), I've initialised the time here as 0.
 
-
+```py
     i=0  
       
     x = all_team[all_team.time==i].x  #Calculate x based on time
     y = all_team[all_team.time==i].y  #Calculate y based on time
-
+```
 
 
 To plot the player labels and team colour, I've created 2 separate variables **player_id** and **c**. This is bit like hard coding the labels and colour. Since these values will not change for the whole sequence, it doesn't matter if we hard code this or use any other alternative method. You could also use **factor_cmap** feature on bokeh, for player color. 
  
  
  
-
+```py
     player_id=['1','2','3','4','5','6','7','8','9','10','11','1','2','3','4','5','6','7','8','9','10','11',' ']  
     
     #The last value is left empty to not show label for the ball.
     
     c=['dodgerblue','dodgerblue','dodgerblue','dodgerblue','dodgerblue','dodgerblue','dodgerblue','dodgerblue','dodgerblue','dodgerblue','dodgerblue','orangered','orangered','orangered','orangered','orangered','orangered','orangered','orangered','orangered','orangered','orangered','gold']
-
+```
 
 
 Once we've the required variables, create the **ColumnDataSource** as below.
 
-
+```py
     source = ColumnDataSource(data=dict(x=x, y=y,player_id=player_id,color=c))
-
+```
 
 Now we should plot the background image (football pitch). For this, store the image inside the **static/images** folder within myapp folder.
 
 Now create the plot as below.
 
-
+```py
     #Set up plot  
     plot = figure(name='base',plot_height=600, plot_width=800, title="Game Animation",  
                   tools="reset,save",  
@@ -111,17 +111,17 @@ Now create the plot as below.
     curdoc().add_root(layout)
     
     curdoc().title = "Game Animation"
-
+```
 
 
 Now run the bokeh server using **bokeh serve --show myapp**. For the plot to appear, run the bokeh serve from the directory where your myapp folder is placed. For example, If the myapp folder is located inside your desktop/python directory, traverse (cd desktop/python) to the folder on terminal/cmd and run the bokeh serve command. This should show the plot in the browser.
 
 The plot will only show the player coordinates at time 0. Now we need to add a slider and vary the time to show the full sequence of event.
 
-
+```py
     #Add a slider freq
     freq = Slider(title="Game Time", value=0, start=all_team.time.unique().min(), end=all_team.time.unique().max(), step=1)
-
+```
 
 
 We define the start and end time using **all_team.time.unique().min()/max()**.
@@ -129,7 +129,7 @@ We define the start and end time using **all_team.time.unique().min()/max()**.
 Once the slider is created, you'd need to build a function to get the call back when slider is updated.
 
 
-
+```py
     def update_data(attrname, old, new):  
         k = freq.value #holds the current time value of slider after updating the slider
         
@@ -139,21 +139,22 @@ Once the slider is created, you'd need to build a function to get the call back 
         #update the CDS source with new x and y values. player_id and c remains same and it'll be plotted on top of new x and y.
         
         source.data = dict(x=x, y=y,player_id=player_id,color=c)
-
+```
 
 Every time the **source** gets updated, all the plots associated with '**source**' will get updated as well, which includes the scatter plot **st** and **labels**, since we're using this source to plot those data.
 
 To call the above function when the slider is updated, we add
 
-
+```py
     for w in [freq]:  
         w.on_change('value', update_data)
-
+```
 
 Now add the slider to the plot layout using the Widgetbox.
 
+```py
     inputs = widgetbox(freq)
-
+```
 
 Now if you run the bokeh serve again, you should be able to see the slider and the plot gets updated based on the change in the slider. 
 
@@ -163,22 +164,22 @@ Now if you run the bokeh serve again, you should be able to see the slider and t
 
 Now add the button to create the play and pause animation.
 
-
+```py
     button = Button(label='► Play', width=60)
-
+```
 
 To allow ► symbol in your browser, add "**# -*- coding: utf-8 -*-**" in the beginning of your code.
 
 
-
+```py
     def animate_update():  
         year = freq.value + 1 #gets value of slider + 1
       if year > all_team.time.max():  
             year = all_team.time[0]  #if slider value+1 is above max, reset to 0
         freq.value = year  
+ ```    
       
-      
-      
+  ```py    
     #Update the label on the button once the button is clicked
     def animate():  
         if button.label == '► Play':  
@@ -190,16 +191,16 @@ To allow ► symbol in your browser, add "**# -*- coding: utf-8 -*-**" in the be
       
     #callback when button is clicked.
     button.on_click(animate)
-
+```
 
 
 The animate button was taken from here: [Gapminder Bokeh](https://github.com/bokeh/bokeh/blob/master/examples/app/gapminder/main.py)
 
 Update the WidgetBox with the button and run the bokeh server to see the animation. 
 
-
+```py
     inputs = widgetbox(freq,button)
-
+```
 
 
 ![enter image description here](https://raw.githubusercontent.com/samirak93/analytics/gh-pages/blog_images/images/blog2/ezgif-1-0e4553e448.gif)
@@ -207,22 +208,23 @@ Update the WidgetBox with the button and run the bokeh server to see the animati
 
 To plot the convex hull, we'd need to create few more variables. 
 
-
+```py
     team_att =all_team[all_team.team_id==2]  
     team_def =all_team[all_team.team_id==1]
-
+```
 
 We've now split the data frame to hold separate data for attacking and defending team, since we'd have to plot convex hull for each team. 
 
 We then use numpy's vstack feature to create the 2 arrays.
 
-
+```py
     t1 = np.vstack((team_att[team_att.time==i].x, team_att[team_att.time==i].y)).T  
     t2 = np.vstack((team_def[team_def.time == i].x, team_def[team_def.time == i].y)).T
-
+```
 
 Once we have the arrays, we use the scipy convex hull package to get the vertices of the convex hull.
 
+```py
     hull=ConvexHull(t1)  
     hull2= ConvexHull(t2)  
     xc = t1[hull.vertices, 0]  
@@ -230,24 +232,24 @@ Once we have the arrays, we use the scipy convex hull package to get the vertice
       
     ax = t2[hull2.vertices, 0]  
     ay = t2[hull2.vertices, 1]
-
+```
 
 Create 2 separate CDS to hold these values. 
 
-
+```py
     source2 = ColumnDataSource(data=dict(xc=xc,yc=yc))  
     source3 = ColumnDataSource(data=dict(ax=ax,ay=ay))
     
     #Plot the vertices as a patch
     team_Blue=plot.patch('xc', 'yc', source=source2, alpha=0.3, line_width=3, fill_color='dodgerblue')  
     team_red = plot.patch('ax', 'ay',source=source3, alpha=0.3, line_width=3,fill_color='orangered')
-
+```
 
 If you run the bokeh server now, the convex hull will be plotted only for the time 0 since we've not added source2 and source 3 in the slider call bck. In the function **update_data**, again add the above steps to plot the convex hull dynamically, based on the slider value. 
 
 Now, the updated function **update_data** looks as below:
 
-
+```py
     def update_data(attrname, old, new):  
       
         k = freq.value  
@@ -271,7 +273,7 @@ Now, the updated function **update_data** looks as below:
       
         source2.data=dict(xc=xc,yc=yc)  
         source3.data=dict(ax=ax,ay=ay)
-
+```
 
 
 So now if you run the bokeh server, the convex hull also will be updated when the slider gets updated.
@@ -281,24 +283,25 @@ So now if you run the bokeh server, the convex hull also will be updated when th
 
 Now to toggle the convex hull on/off, add a CheckboxButtonGroup to the plot. 
 
-
+```py
     checkbox_blue=CheckboxButtonGroup(labels=["Team Red"],button_type = "primary")  
     checkbox_red=CheckboxButtonGroup(labels=["Team Blue"],button_type = "primary")
-
+```
 
 There are multiple ways to toggle the convex hull on/off. I've used the CustomJS option to set the convex hull patch alpha when the toggle button is clicked. 
 
 
 Update the plot.patch as below, so that the patch is initially not visible in the plot.
 
+```py
     #alpha is changed to 0
     team_Blue=plot.patch('xc', 'yc', source=source2, alpha=0, line_width=3, fill_color='orangered')  
     team_red = plot.patch('ax', 'ay',source=source3, alpha=0, line_width=3,fill_color='dodgerblue')
-
+```
 
 Now add a customJS callback to these patches. This callback will update the patch alpha to 0.3. This is a shortcut to make this work. The other alternative solution would be to add the convex hull plot as a children to the plot layout. 
 
-
+```py
     #l0.glyph.fill_alpha sets the alpha of the patch
     checkbox_blue.callback = CustomJS(args=dict(l0=team_Blue, checkbox=checkbox_blue), code="""  
     l0.visible = 0 in checkbox.active;  
@@ -308,15 +311,16 @@ Now add a customJS callback to these patches. This callback will update the patc
     l0.visible = 0 in checkbox.active;  
     l0.glyph.fill_alpha = 0.3;  
     """)
-
+```
 
 Add a paragraph label and update the WidgetBox and run the server.
 
+```py
     p = Paragraph(text="""Select team  to plot convex hull""",  
     width=200)  
       
     inputs = widgetbox(freq,button,p,checkbox_blue,checkbox_red)
-
+```
 
 
 The completed output should be like this.
