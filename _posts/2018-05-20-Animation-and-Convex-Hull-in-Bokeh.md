@@ -21,12 +21,12 @@ myapp<br/>
 
 Once the player and team tags are added, we'd have the data as below
 
-
+```py
     import pandas as pd
     df=pd.read_csv('data/data.csv')
     headers = ["x", "y", "team_id", "player_id","time"]  
     all_team = pd.DataFrame(df, columns=headers)
-    
+ ```  
 
 
  Here, 
