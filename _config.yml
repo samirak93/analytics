@@ -1,6 +1,6 @@
 # Build settings
 
-markdown: kramdown
+markdown: redcarpet
 highlighter: rouge
 
 permalink: none
